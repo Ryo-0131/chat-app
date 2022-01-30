@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2022_01_29_142325) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -39,7 +38,6 @@ ActiveRecord::Schema.define(version: 2022_01_29_142325) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
 end
